@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import '../style/form.css'
+import { Link } from 'react-router-dom'
 const Signup = () => {
     const [User, setUser] = useState({
         username: "",
@@ -16,12 +17,15 @@ const Signup = () => {
         })
       
     };
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log("User Data:", User);
+    };
     return (
   <div className="form">
   <h2 className="form-title">sign up</h2>
-  <form className="login-form" onSubmit={handleLogin}>
+  <form className="login-form" onSubmit={handleSubmit}>
     <div className="input-container">
-    
     <input
       type="text"
      name='name'
@@ -30,8 +34,8 @@ const Signup = () => {
       onChange={handelChange}
     />
     </div>
-    <div className="form-group">
-    <label for="Password">Password</label>
+    <div className="input-container">
+   
     <input
       type="password"
         name='password'
@@ -40,7 +44,7 @@ const Signup = () => {
       onChange={handelChange}
     />
     </div>
-    <div className="form-group">
+    <div className="input-container">
     <input
       type="text"
      name='email'
@@ -52,7 +56,7 @@ const Signup = () => {
     <button className="submit" type="submit">Sign up</button>
     <p class="signup-link">
      have an account?
-        <a href="">login</a>
+       <Link  to='/login'><p>login</p></Link>
       </p>
   </form>
   </div>
