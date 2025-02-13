@@ -1,13 +1,14 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState , useNavigate} from 'react'
 import '../style/form.css'
 import { Link } from 'react-router-dom'
-const Signup = () => {
+const Signup = ({ setIsLoggedIn }) => {
     const [User, setUser] = useState({
         username: "",
         email: "",
         password: ""
     })
+    const navigate = useNavigate();
     const handelChange = (e) => {
         let targetName = e.target.name
         let targetValue = e.target.value
@@ -15,11 +16,14 @@ const Signup = () => {
             ...User,
             [targetName]: targetValue
         })
-      
+       
     };
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log("User Data:", User);
+      localStorage.setItem("isLoggedIn", "true");
+      setIsLoggedIn(true);
+      navigate("/");
     };
     return (
   <div className="form">

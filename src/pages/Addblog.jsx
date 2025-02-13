@@ -3,7 +3,7 @@ import Navbar from '../components/navbar'
 
 const addblog = () => {
   return (
- <Navbar/>
+<><h1>blog</h1></>
   )
 }
 
