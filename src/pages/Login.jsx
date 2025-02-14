@@ -2,12 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import '../style/form.css'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
     const [User, setUser] = useState({
         username: "",
         password: ""
     })
+    const navigate = useNavigate();
     const handelChange = (e) => {
         let targetName = e.target.name
         let targetValue = e.target.value
@@ -18,8 +20,10 @@ const Login = () => {
     };
     
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("User Data:", User);
+      e.preventDefault();
+      console.log("User Data:", User);
+      localStorage.setItem("isLoggedIn", "true");
+      navigate("/");
       };
     
     return (
