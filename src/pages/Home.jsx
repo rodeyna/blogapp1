@@ -45,6 +45,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import '../style/Home.css';
+import Post from '../components/Post/Post'
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -87,10 +88,10 @@ const Home = () => {
                 <img src={post.imgUrl} alt={post.name} className="blog-image" />
                 <h2 className="blog-title">{post.name}</h2>
                 <p className="blog-text">{post.text.substring(0, 60)}...</p>
-                <button className="delete" onClick={Deleteit}>delete</button>
+               <Post post={post.post} Deleteit={Deleteit} index={index}/>
               </div>
-            ))}
-          </div>
+        ))}
+          
         ) : (
           <p className="no-posts">No blog posts available. Add a new blog post!</p>
         )}
