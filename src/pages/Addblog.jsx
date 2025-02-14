@@ -90,6 +90,7 @@ const Addblog = () => {
               placeholder="Enter blog text"
               required
             />
+            
           </div>
           <div className="form-group">
             <label>Image URL:</label>
@@ -99,7 +100,6 @@ const Addblog = () => {
               value={blogPost.imgUrl}
               onChange={handleChange}
               placeholder="Enter image URL (e.g., from Google)"
-              required
             />
           </div>
           <button type="submit">Add Blog Post</button>

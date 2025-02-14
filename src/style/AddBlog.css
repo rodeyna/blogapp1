@@ -52,12 +52,19 @@
     font-size: 16px;
     transition: border 0.3s ease-in-out;
     resize: none; /* Désactive l'ajustement manuel */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #007bff;
     outline: none;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    background-color: #efefef;
+    transition: background 0.3s ease-in-out;
 }
 
 /* Bouton */

@@ -42,13 +42,15 @@
 // export default Home;
 
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar';
+import { FiEdit, FiTrash2 } from 'react-icons/fi'; // Import des icônes
 import '../style/Home.css';
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [posts, setPosts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loggedIn = localStorage.getItem("isLoggedIn") === "true";
@@ -60,12 +62,20 @@ const Home = () => {
     }
   }, []);
 
+  // Supprimer un blog post
+  const handleDelete = (index) => {
+    const updatedPosts = [...posts];
+    updatedPosts.splice(index, 1);
+    setPosts(updatedPosts);
+    localStorage.setItem('blogPosts', JSON.stringify(updatedPosts));
+  };
+
   return (
     <>
       <Navbar />
       <div className="home-container">
         <h1 className="home-title">Latest Blog Posts</h1>
-        
+
         {isLoggedIn && (
           <Link to="/Addblog" className="add-blog-button">
             + Add New Blog
@@ -79,6 +89,20 @@ const Home = () => {
                 <img src={post.imgUrl} alt={post.name} className="blog-image" />
                 <h2 className="blog-title">{post.name}</h2>
                 <p className="blog-text">{post.text.substring(0, 100)}...</p>
+
+                {/* Icônes Modifier et Supprimer */}
+                {isLoggedIn && (
+                  <div className="blog-icons">
+                    <FiEdit
+                      className="edit-icon"
+                      onClick={() => navigate(`/edit/${index}`)}
+                    />
+                    <FiTrash2
+                      className="delete-icon"S
+                      onClick={() => handleDelete(index)}
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>

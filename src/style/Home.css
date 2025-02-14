@@ -40,9 +40,10 @@
   .blog-card {
     background: white;
     padding: 15px;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    max-width: 400px; /* Fixer une largeur maximale */
   }
   
   .blog-card:hover {
@@ -55,6 +56,7 @@
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
+    object-fit: cover;
   }
   
   /* Titre du blog */
@@ -67,11 +69,52 @@
   .blog-text {
     font-size: 1rem;
     color: #555;
+    max-width: 90%; /* Évite que le texte ne prenne trop de place */
   }
   
   /* Message si aucun blog n'est dispo */
   .no-posts {
     font-size: 1.2rem;
     color: #777;
+  }
+/* Conteneur des boutons */
+.blog-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+/* Conteneur des icônes */
+.blog-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Icône Modifier */
+  .edit-icon {
+    font-size: 22px;
+    color: #ffc107;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s;
+  }
+  
+  .edit-icon:hover {
+    color: #e0a800;
+    transform: scale(1.2);
+  }
+  
+  /* Icône Supprimer */
+  .delete-icon {
+    font-size: 22px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s;
+  }
+  
+  .delete-icon:hover {
+    color: #c82333;
+    transform: scale(1.2);
   }
   
