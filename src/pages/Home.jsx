@@ -40,7 +40,7 @@
 //   );
 // };
 // export default Home;
-
+ 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar';
@@ -58,7 +58,15 @@ const Home = () => {
     if (savedPosts) {
       setPosts(JSON.parse(savedPosts));
     }
+
   }, []);
+    function Deleteit(index){
+      console.log("clicked")
+      var newposts = posts
+      newposts.splice(index,1)
+      localStorage.setItem("savedPosts",JSON.stringify(newposts))
+      setPosts([...newposts])
+    }
 
   return (
     <>
@@ -78,7 +86,8 @@ const Home = () => {
               <div key={index} className="blog-card">
                 <img src={post.imgUrl} alt={post.name} className="blog-image" />
                 <h2 className="blog-title">{post.name}</h2>
-                <p className="blog-text">{post.text.substring(0, 100)}...</p>
+                <p className="blog-text">{post.text.substring(0, 60)}...</p>
+                <button className="delete" onClick={Deleteit}>delete</button>
               </div>
             ))}
           </div>
