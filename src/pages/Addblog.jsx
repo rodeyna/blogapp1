@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/navbar';
 import { useNavigate } from 'react-router-dom';
+import '../style/AddBlog.css'
 
 const Addblog = () => {
   const navigate = useNavigate();
@@ -24,10 +25,19 @@ const Addblog = () => {
     });
   };
 
+
+  //just to reset blogPosts
+  // const handleReset = () => {
+  //   localStorage.removeItem("blogPosts"); // Supprime les articles du localStorage
+  //   setBlogPost([]); // Réinitialise l'état
+  //   console.log("localstorage renitialiser")
+  // };
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!blogPost.name || !blogPost.text || !blogPost.imgUrl) {
+    if (!blogPost.name || !blogPost.text) {
       alert('Please fill out all fields.');
       return;
     }
@@ -53,8 +63,12 @@ const Addblog = () => {
   return (
     <>
       <Navbar />
+      {/* <button onClick={handleReset} style={{ marginTop: "10px", color: "red" }}>
+  Réinitialiser les articles
+</button> */}
+
       <div className="add-blog-container">
-        <h2>Add a New Blog Post</h2>
+        <h2>Add New Blog Post</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Blog Name:</label>

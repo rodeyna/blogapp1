@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     font-family: 'Roboto', sans-serif;}
 .navbar {
@@ -50,4 +50,84 @@ body {
     background-color: #ffffff;
     border: 2px solid black;
     color: black;}
-  
+   */
+
+   /* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 10px auto;
+  max-width: 1200px;
+}
+
+/* Logo + Title */
+.navbar h1 {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Logo Style */
+.navbar img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  gap: 15px;
+}
+
+/* Buttons */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Button Colors */
+.button-blue {
+  background: #007bff;
+  color: white;
+}
+
+.button-green {
+  background: #28a745;
+  color: white;
+}
+
+.button-red {
+  background: #dc3545;
+  color: white;
+}
+
+/* Hover Effects */
+.button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .button-container {
+      margin-top: 10px;
+  }
+}

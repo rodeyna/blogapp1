@@ -1,0 +1,77 @@
+/* Style de la page Home */
+.home-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .home-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Bouton pour ajouter un blog */
+  .add-blog-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .add-blog-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Grid pour afficher les blogs */
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  /* Carte individuelle des blogs */
+  .blog-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Image du blog */
+  .blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Titre du blog */
+  .blog-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  /* Texte du blog */
+  .blog-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Message si aucun blog n'est dispo */
+  .no-posts {
+    font-size: 1.2rem;
+    color: #777;
+  }
+  

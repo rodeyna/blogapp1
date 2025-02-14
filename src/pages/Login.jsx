@@ -71,7 +71,7 @@ const Signup = () => {
               <button className="submit" type="submit">Sign up</button>
               <div className="signup-link">
                 <p className='cleargrey'>Have an account?</p>
-                <Link to='/login'><p>Login</p></Link>
+                <Link to='/signup'><p>Sign Up</p></Link>
               </div>
             </form>
           </div>
