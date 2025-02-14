@@ -1,10 +1,16 @@
-import React from 'react'
-import Navbar from '../components/navbar'
+import React, { useState, useEffect } from 'react';
+import Navbar from '../components/navbar';
+import Addblog from '../components/addblog';
 
-const addblog = () => {
+
+const Addblog = () => {
   return (
-<><h1>blog</h1></>
-  )
-}
+    <>
+      <Navbar />
+      <Addblog />
+     
+    </>
+  );
+};
 
-export default addblog
+export default Addblog;
