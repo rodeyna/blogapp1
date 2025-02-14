@@ -95,10 +95,10 @@ const Home = () => {
                   <div className="blog-icons">
                     <FiEdit
                       className="edit-icon"
-                      onClick={() => navigate(`/edit/${index}`)}
+                      onClick={() => navigate(`/Edit/${index}`)}
                     />
                     <FiTrash2
-                      className="delete-icon"S
+                      className="delete-icon"
                       onClick={() => handleDelete(index)}
                     />
                   </div>
