@@ -23,43 +23,52 @@ const Signup = () => {
     };
     return (
   <div className="form">
-  <h2 className="form-title">sign up</h2>
-  <form className="login-form" onSubmit={handleSubmit}>
-    <div className="input-container">
-    <input
-      type="text"
-     name='name'
-     placeholder="Enter your username"
-      value={User.username}
-      onChange={handelChange}
-    />
+    <div className='img'></div>
+    <div className='mainlog'>
+      <div className='log'>
+        <div className="intro">
+          <h2 className="form-title">sign up</h2>
+        </div>
+        <form className="login-form" onSubmit={handleSubmit}>
+        <div className="input-container">
+        <label className="cleargrey">User Name</label>
+          <input
+            type="text"
+            name='name'
+            placeholder="Enter your username"
+            value={User.username}
+            onChange={handelChange}
+          />
+        </div>
+        <div className="input-container">
+        <label className="cleargrey">Password</label>
+          <input
+            type="password"
+            name='password'
+            placeholder="Enter password"
+            value={User.password}
+            onChange={handelChange}
+          />
+          </div>
+          <div className="input-container">
+          <label className="cleargrey">E-mail</label>
+            <input
+              type="text"
+              name='email'
+              placeholder="Enter email"
+              value={User.email}
+              onChange={handelChange}
+            />
+          </div>
+          <button className="submit" type="submit">Sign up</button>
+          <div class="signup-link">
+            <p className="cleargrey">have an account?</p> 
+            <Link  to='/login'><p>login</p></Link>
+          </div>
+        </form>
+      </div>
     </div>
-    <div className="input-container">
-   
-    <input
-      type="password"
-        name='password'
-        placeholder="Enter password"
-      value={User.password}
-      onChange={handelChange}
-    />
-    </div>
-    <div className="input-container">
-    <input
-      type="text"
-     name='email'
-     placeholder="Enter email"
-      value={User.email}
-      onChange={handelChange}
-    />
-    </div>
-    <button className="submit" type="submit">Sign up</button>
-    <p class="signup-link">
-     have an account?
-       <Link  to='/login'><p>login</p></Link>
-      </p>
-  </form>
   </div>
-    );
+  );
 }
 export default Signup

@@ -40,7 +40,7 @@ const Login = () => {
                   placeholder="Enter your username"
                   value={User.username}
                   onChange={handelChange}
-                />
+                  />
                 </div>
                 <div className="input-container">
                   <label className="cleargrey">Password</label>
