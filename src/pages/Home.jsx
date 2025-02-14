@@ -1,25 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar';
-
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  
   useEffect(() => {
     const loggedIn = localStorage.getItem("isLoggedIn") === "true";
     setIsLoggedIn(loggedIn);
   }, []);
   const [posts, setPosts] = useState([]);
-
-
   useEffect(() => {
     const savedPosts = localStorage.getItem('blogPosts');
     if (savedPosts) {
       setPosts(JSON.parse(savedPosts));
     }
   }, []);
-
   return (
     <>
       <Navbar />
@@ -45,5 +39,4 @@ const Home = () => {
     </>
   );
 };
-
 export default Home;
