@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 import Home from './pages/Home';
 import Login from './pages/login';
 import Signup from './pages/Signup';
-import Addblog from './pages/Addblog';
+import Addblog from './pages/addblog';
 
 function App() {
   return (

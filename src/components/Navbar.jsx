@@ -25,14 +25,14 @@ const Navbar = () => {
         {!isLoggedIn ? (
           <>
             <Link to="/login">
-              <button className="button button-blue">Login</button>
+              <button className="button button-login">Login</button>
             </Link>
             <Link to="/signup">
-              <button className="button button-green">Sign Up</button>
+              <button className="button button-signup">Sign Up</button>
             </Link>
           </>
         ) : (
-          <button className="button button-red" onClick={handleLogout}>Logout</button>
+          <button className="button button-logout" onClick={handleLogout}>Logout</button>
         )}
       </div>
     </nav>

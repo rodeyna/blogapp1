@@ -1,8 +1,8 @@
 /* Style de la page Home */
 .home-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+
+    margin: 0 ;
+
     text-align: center;
   }
   
@@ -15,7 +15,7 @@
   /* Bouton pour ajouter un blog */
   .add-blog-button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #000000;
     color: white;
     padding: 10px 20px;
     margin-bottom: 20px;
@@ -34,6 +34,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    padding: 30px;
   }
   
   /* Carte individuelle des blogs */

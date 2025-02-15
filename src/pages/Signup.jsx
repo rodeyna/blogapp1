@@ -30,7 +30,8 @@ const Signup = () => {
   return (
     <>
       <div className="form">
-        <div className='img'></div>
+      <div className='img'   style={{
+    backgroundImage: "url('https://images.pexels.com/photos/261662/pexels-photo-261662.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",backgroundSize: "cover",}}></div>
         <div className='mainlog'>
           <div className='log'>
             <div className="intro">

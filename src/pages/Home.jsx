@@ -45,7 +45,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import '../style/Home.css';
-
+import Footer from '../components/footer';
+import Hero from '../components/Hero';
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [posts, setPosts] = useState([]);
@@ -64,14 +65,8 @@ const Home = () => {
     <>
       <Navbar />
       <div className="home-container">
+        <Hero/>
         <h1 className="home-title">Latest Blog Posts</h1>
-        
-        {isLoggedIn && (
-          <Link to="/Addblog" className="add-blog-button">
-            + Add New Blog
-          </Link>
-        )}
-
         {posts.length > 0 ? (
           <div className="blog-grid">
             {posts.map((post, index) => (
@@ -85,7 +80,14 @@ const Home = () => {
         ) : (
           <p className="no-posts">No blog posts available. Add a new blog post!</p>
         )}
+        {isLoggedIn && (
+          <Link to="/Addblog" className="add-blog-button">
+            + Add New Blog
+          </Link>
+        )}
+
       </div>
+      <Footer/>
     </>
   );
 };
