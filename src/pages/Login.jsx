@@ -45,6 +45,7 @@ const Login = () => {
                   placeholder="Enter your username"
                   value={User.username}
                   onChange={handelChange}
+                  required
                   />
                 </div>
                 <div className="input-container">
@@ -55,6 +56,7 @@ const Login = () => {
                     placeholder="Enter password"
                     value={User.password}
                     onChange={handelChange}
+                    required
                   />
                 </div>
                 <div className="param">
